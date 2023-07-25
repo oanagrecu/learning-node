@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/html");
 
   // routing
-  let path = "./client";
+  let path = "./client/";
 
   switch (req.url) {
     case "/":
@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
       path += "contact/index.html";
       break;
     default:
-      path += "404.html";
+      path += "/404.html";
       res.statusCode = 404;
   }
 
