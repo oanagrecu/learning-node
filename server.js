@@ -17,9 +17,6 @@ fs.writeFile(
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" href="style.css">
           <title>About</title>
-          <style>
-          body {background-color:red;}
-          </style>
       </head>
       <body>
           <h1> Client1 - About</h1>
@@ -52,7 +49,7 @@ fs.readFile(
 
 fs.writeFile(
   path.join(__dirname, "/client", "/about", "style.css"),
-  "body {background-color:magenta;}",
+  "body {background-color:orange;}",
   (err) => {
     if (err) throw err;
     console.log("File written to...");
@@ -103,6 +100,24 @@ fs.writeFile(
 //   }
 // );
 
+fs.writeFile(
+  path.join(__dirname, "/client", "/blog", "style.css"),
+  "body {background-color:yellow;}",
+  (err) => {
+    if (err) throw err;
+    console.log("File written to...");
+
+    // File append
+    fs.appendFile(
+      path.join(__dirname, "/client", "/blog", "style.css"),
+      "",
+      (err) => {
+        if (err) throw err;
+        console.log("File written to...");
+      }
+    );
+  }
+);
 fs.writeFile(
   path.join(__dirname, "/client", "info.txt"),
   "This is being run on a " + os.type() + " computer!",
