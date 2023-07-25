@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/html");
 
   // routing
-  let path = "./client/";
+  let path = "./client";
 
   switch (req.url) {
     case "/":
