@@ -1,7 +1,9 @@
 const http = require("http");
 const fs = require("fs");
 
-const server = http.createServer((req, res) => {
+const server = http.createServer();
+
+server.on("request", (req, res) => {
   // set header content type
   res.setHeader("Content-Type", "text/html");
 
@@ -41,3 +43,15 @@ const server = http.createServer((req, res) => {
 server.listen(3000, "localhost", () => {
   console.log("listening for requests on port 3000");
 });
+
+// const http = require("http");
+// const server = http.createServer();
+// server.on("request", (req, response) => {
+//   console.log("A request has been submitted");
+//   console.log(req);
+// });
+
+// // The port listener
+// server.listen(3000, () => {
+//   console.log("Server started on http://127.0.0.1:3000");
+// });
