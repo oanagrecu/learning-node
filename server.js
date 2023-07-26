@@ -22,6 +22,7 @@ server.on("request", (req, res) => {
     case "/about-me":
       res.statusCode = 301;
       res.setHeader("Location", "/about");
+      res.end();
       break;
     case "/blog":
       path += "blog/index.html";
