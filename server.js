@@ -13,15 +13,23 @@ server.on("request", (req, res) => {
   switch (req.url) {
     case "/":
       path += "index.html";
+      res.statusCode = 200;
       break;
     case "/about":
       path += "about/index.html";
+      res.statusCode = 200;
+      break;
+    case "/about-me":
+      res.statusCode = 301;
+      res.setHeader("Location", "/about");
       break;
     case "/blog":
       path += "blog/index.html";
+      res.statusCode = 200;
       break;
     case "/contact":
       path += "contact/index.html";
+      res.statusCode = 200;
       break;
     default:
       path += "/404.html";
